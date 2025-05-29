@@ -4,3 +4,4 @@ import { Theme } from "../theme/theme";
 const Box = createBox<Theme>();
 
 export default Box;
+export type BoxProps = React.ComponentProps<typeof Box>;
