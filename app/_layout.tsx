@@ -1,13 +1,13 @@
-import theme from '@/src/theme/theme';
-import { ThemeProvider } from '@shopify/restyle';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import theme from "@/src/theme/theme";
+import { ThemeProvider } from "@shopify/restyle";
+import { useFonts } from "expo-font";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import "react-native-reanimated";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    IcoMoon:require('../assets/icons/icomoon.ttf'),
+    IcoMoon: require("../assets/icons/icomoon.ttf"),
     PoppinsBlack: require("../assets/fonts/Poppins-Black.ttf"),
     PoppinsBlackItalic: require("../assets/fonts/Poppins-BlackItalic.ttf"),
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
@@ -38,8 +38,8 @@ export default function RootLayout() {
         <Stack.Screen name="(protected)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="sign-in" />
-        <StatusBar style="auto" />
       </Stack>
+      <StatusBar style="light" />
     </ThemeProvider>
   );
 }
