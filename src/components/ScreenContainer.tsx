@@ -4,7 +4,7 @@ import Box, { BoxProps } from "./Box";
 
 export function ScreenContainer({children, ...boxProps}:PropsWithChildren & BoxProps) {
   return (
-    <Box backgroundColor="background" paddingHorizontal="s16">
+    <Box backgroundColor="background" >
       {children}
     </Box>
   )
