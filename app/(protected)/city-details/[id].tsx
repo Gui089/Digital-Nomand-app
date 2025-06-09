@@ -22,7 +22,7 @@ export default function CityDetails() {
   }
 
   return (
-    <ScreenContainer style={{ paddingHorizontal: 0 }}>
+    <ScreenContainer style={{ paddingHorizontal: 0 }} scrollable>
       <CityDetailsHeader
         id={city.id}
         categories={city.categories}
@@ -34,7 +34,7 @@ export default function CityDetails() {
         description={city.description}
       />
       <Divider paddingHorizontal="padding" />
-      <CityDetailsTouristAttactions />
+      <CityDetailsTouristAttactions touristAttractions={city.touristAttractions}/>
       <Divider paddingHorizontal="padding" />
       <CityDetailsMap />
       <Divider paddingHorizontal="padding" />
