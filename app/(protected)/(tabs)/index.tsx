@@ -18,9 +18,7 @@ export default function HomeScreen() {
   const flatListRef = useRef(null);
   const { top } = useSafeAreaInsets();
   const [name, setName] = useState("");
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(
-    null
-  );
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   const debouncedCityName = useDebounce(name);
   const { cityPreviewList } = useCities({name:debouncedCityName, categoryId: selectedCategoryId});
 
