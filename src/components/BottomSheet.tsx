@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { SharedValue, useAnimatedStyle, useDerivedValue, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 
-type BottomSheetProps = {
+export type BottomSheetProps = {
   isOpen: SharedValue<boolean>;
   onPress: () => void;
   duration?: number;

@@ -1,6 +1,6 @@
-import { BottomSheet } from "@/src/components/BottomSheet";
 import { Divider } from "@/src/components/Divider";
 import { ScreenContainer } from "@/src/components/ScreenContainer";
+import { BottoSheetMap } from "@/src/containers/BottomSheetMap";
 import { CityDetailInfo } from "@/src/containers/CityDetailInfo";
 import { CityDetailsHeader } from "@/src/containers/CityDetailsHeader";
 import { CityDetailsMap } from "@/src/containers/CityDetailsMap";
@@ -9,7 +9,6 @@ import { CityDetailsTouristAttactions } from "@/src/containers/CityDetailsTouris
 import { useCitieDetails } from "@/src/data/useCitieDetails";
 import { useLocalSearchParams } from "expo-router";
 import { Pressable, Text } from "react-native";
-import MapView from "react-native-maps";
 import { useSharedValue } from "react-native-reanimated";
 
 export default function CityDetails() {
@@ -54,23 +53,9 @@ export default function CityDetails() {
 
         <Divider paddingHorizontal="padding" />
 
-        <CityDetailsRelatedCities />
+        <CityDetailsRelatedCities relatedCitiesIds={city.relatedCitiesIds}/>
       </ScreenContainer>
-      <BottomSheet onPress={toggleBottomSheet} isOpen={isOpen}>
-        <MapView
-          style={{
-            width: '100%',
-            height: 400,
-          }}
-
-          initialRegion={{
-            latitude: city.location.latitude,
-            longitude: city.location.longitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
-          }}
-        />
-      </BottomSheet>
+      <BottoSheetMap location={city.location} isOpen={isOpen} onPress={toggleBottomSheet}/>
     </>
 
   );
